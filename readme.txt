@@ -3,7 +3,7 @@ Contributors: iamdavekiss
 Tags: vimeo, video, videos, gallery, vimeography, fancybox, media, player, playlist, showcase, skins, themes, video gallery
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 0.9.3
+Stable tag: 1.0
 License: MIT
 
 The easiest way to create beautiful Vimeo galleries on your Wordpress blog.
