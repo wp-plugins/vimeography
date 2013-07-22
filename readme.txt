@@ -102,7 +102,6 @@ Heck yeah! Use the appearance editor to change your theme's style so that it mat
 4. Get new styles by installing gallery themes.
 
 == Changelog ==
-
 = 1.0 =
 * Now using Vimeo's new API!
 * Themes are now standard Wordpress plugins and are able to be updated.
