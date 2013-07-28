@@ -1,0 +1,50 @@
+<div class="wrap wp_bootstrap">
+	<div class="icon32" id="icon-options-general"><br></div>
+	<h2 class="page-title">My Themes</h2>
+
+	{{#messages}}
+		<div class="alert alert-{{type}} fade in">
+			<a class="close" data-dismiss="alert" href="#">&times;</a>
+			<h3 class="alert-heading">{{heading}}</h3>
+			<p>{{message}}</p>
+		</div>
+	{{/messages}}
+
+	<div style="clear:both;margin: 0 25px;" >
+		<h3 class="alert-heading">Activate Theme Updates</h3>
+		<p>Downloaded a theme from vimeography.com? Enter the activation key to receive free updates to your theme.</p>
+
+		<form id="activation-form" class="form-inline" style="margin: 0; padding: 10px 0;" method="post" action="">
+	    <fieldset>
+				<div class="input-append">
+				  <input class="span3" type="text" name="vimeography-activation-key" style="height: 30px;">
+				  <button class="btn" type="submit" form="activation-form">Activate Theme</button>
+				</div>
+	    </fieldset>
+		{{{nonce}}}
+    </form>
+	</div>
+
+	<ul class="vimeography-theme-list">
+		{{#themes}}
+			<li style="display: inline-block;">
+				<div class="theme-container">
+					<div class="theme-image">
+						<img alt="{{name}}" src="{{thumbnail}}" />
+					</div>
+
+					<div class="theme-details">
+						<a href="#" data-theme="{{name}}">{{name}}</a>
+						<span><span class="label label-success">{{#activation_key}}Activated{{/activation_key}}</span></span>
+						<span><span class="label">v.{{version}}</span></span>
+					</div>
+
+					<a href="#" data-theme="{{name}}" class="theme-info" style="opacity: 0;">
+						<strong>{{name}}</strong>
+						<span>{{description}}</span>
+					</a>
+				</div>
+			</li>
+		{{/themes}}
+	</ul>
+</div>
