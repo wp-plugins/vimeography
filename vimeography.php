@@ -3,7 +3,7 @@
 Plugin Name: Vimeography
 Plugin URI: http://vimeography.com
 Description: Vimeography is the easiest way to set up a custom Vimeo gallery on your site.
-Version: 1.2.8
+Version: 1.3
 Author: Dave Kiss
 Author URI: http://davekiss.com
 License: GPL3
@@ -52,7 +52,9 @@ if ( ! class_exists( 'Vimeography' ) ) {
         Mustache_Autoloader::register();
 
         if ( is_admin() ) {
+          new Vimeography_Admin_Scripts;
           new Vimeography_Admin_Actions;
+          new Vimeography_Base;
           new Vimeography_Admin_Menu;
           new Vimeography_Admin_Plugins;
           self::$instance->updater = new Vimeography_Update;
@@ -92,7 +94,7 @@ if ( ! class_exists( 'Vimeography' ) ) {
       define( 'VIMEOGRAPHY_CUSTOMIZATIONS_PATH',  WP_CONTENT_DIR . '/vimeography/assets/css/' );
       define( 'VIMEOGRAPHY_CUSTOMIZATIONS_URL',   content_url() . '/vimeography/assets/css/' );
       define( 'VIMEOGRAPHY_BASENAME', plugin_basename( __FILE__ ) );
-      define( 'VIMEOGRAPHY_VERSION', '1.2.8');
+      define( 'VIMEOGRAPHY_VERSION', '1.3');
       define( 'VIMEOGRAPHY_GALLERY_TABLE', $wpdb->prefix . "vimeography_gallery");
       define( 'VIMEOGRAPHY_GALLERY_META_TABLE', $wpdb->prefix . "vimeography_gallery_meta");
       define( 'VIMEOGRAPHY_CURRENT_PAGE', basename($_SERVER['PHP_SELF']));
@@ -128,7 +130,9 @@ if ( ! class_exists( 'Vimeography' ) ) {
       require_once VIMEOGRAPHY_PATH . 'vimeography-bugsauce/vimeography-bugsauce.php';
 
       if ( is_admin() ) {
+        require_once VIMEOGRAPHY_PATH . 'lib/admin/scripts.php';
         require_once VIMEOGRAPHY_PATH . 'lib/admin/actions.php';
+        require_once VIMEOGRAPHY_PATH . 'lib/admin/base.php';
         require_once VIMEOGRAPHY_PATH . 'lib/admin/menu.php';
         require_once VIMEOGRAPHY_PATH . 'lib/admin/plugins.php';
         require_once VIMEOGRAPHY_PATH . 'lib/update.php';
